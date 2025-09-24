@@ -1,0 +1,5 @@
+1. Tại sao cần mutex trong bài tập này?
+Khi ta khai báo 1 biến toàn cục (global variables), điều này có nghĩa các threads bên trong main thread về lý thuyết có thế cùng truy cập và chỉnh sửa giá trị của biến global này đó là lý do ta phải dùng mutex để đảm bảo chỉ có 1 luồng tham gia vào việc tăng giá trị của biến counter, tránh xảy ra hiện tượng race condition - nhiều luồng tham gia vào thay đổi tài nguyên chung tại cùng 1 thời điểm.
+2. Điều gì sẽ xảy ra nếu chúng ta bỏ qua việc sử dụng mutex? Giải thích tại
+sao kết quả cuối cùng có thể không chính xác và không ổn định.
+Khi bỏ đi mutex và bỏ đi mutex_lock khi đó các luồng mà chúng ta tạo ra có khả năng truy cập vào tài nguyên chung như biến global cùng 1 lúc, tức là chúng có quyền như nhau tại mọi thời điểm có thể thay đổi giá trị của tài nguyên chung này, dẫn đến việc kết quả cuối cùng không chính xác.
