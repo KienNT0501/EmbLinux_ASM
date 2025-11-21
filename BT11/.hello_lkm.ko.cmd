@@ -1,0 +1,1 @@
+savedcmd_hello_lkm.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-6.14.0-35-generic/scripts/module.lds -o hello_lkm.ko hello_lkm.o hello_lkm.mod.o .module-common.o
